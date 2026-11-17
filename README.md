@@ -4,7 +4,7 @@ Sistema web para colaboradores registrarem pedidos de manutenção e técnicos a
 
 ## Estado atual
 
-O repositório está na etapa inicial da Semana 1: projeto Django, verificação de saúde, teste de integração, cobertura e configuração da esteira. Os fluxos dos papéis e os modelos de domínio ainda serão implementados.
+O repositório já tem a base Django, a esteira inicial e os modelos de domínio com métodos para as três recusas. As telas, autenticação e carga de dados ainda serão implementadas.
 
 ## Requisitos locais
 
@@ -52,4 +52,4 @@ Cada integrante deve configurar a assinatura SSH e instalar os hooks na própria
 
 ## Ainda previsto para a entrega
 
-Docker Compose, login e grupos, as dez histórias de usuário, regras das três recusas, dados iniciais, testes unitários e de integração completos, credenciais de demonstração e histórico de commits de ambas as integrantes serão adicionados ao longo do projeto.
+Docker Compose, login e grupos, as telas das dez histórias de usuário, dados iniciais, testes de integração completos, credenciais de demonstração e histórico de commits de ambas as integrantes serão adicionados ao longo do projeto.

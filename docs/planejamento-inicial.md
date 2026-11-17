@@ -28,12 +28,14 @@ Sistema web para colaboradores registrarem pedidos de manutenção e técnicos a
 - SQLite no desenvolvimento e no Docker Compose.
 - Usuários do Django com os grupos `Solicitante` e `Técnico`.
 - Modelos de domínio previstos: `Chamado` e `HistoricoChamado`.
-- A primeira etapa prepara `uv`, testes, cobertura, pre-commit e integração contínua. As regras e os modelos de domínio serão implementados depois dessa base.
+- Os estados são `Aberto`, `Em andamento`, `Concluído` e `Cancelado`; comentários são permitidos nos dois primeiros.
+- A avaliação é opcional e recebe nota de 1 a 5 após a conclusão.
+- A conclusão exige que o técnico informe a solução aplicada.
+- A primeira etapa preparou `uv`, testes, cobertura, pre-commit e integração contínua. Os modelos e as três recusas iniciais foram implementados e passaram pelos testes locais.
 
 ## Decisões que precisam ser fechadas antes das regras
 
-- Quais estados contam como chamado ativo para permitir comentários.
-- Se cada chamado pode receber apenas uma avaliação e se a avaliação é opcional.
+- Se cada chamado pode receber apenas uma avaliação.
 - Se somente o técnico que assumiu o chamado pode atualizá-lo ou concluí-lo.
 - Quais transições de estado são permitidas para cancelamento e conclusão.
 

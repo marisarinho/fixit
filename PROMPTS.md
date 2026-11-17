@@ -12,4 +12,10 @@ Resultado: aceito com ajustes. A ideia de chamados, os papéis e o desenho inici
 
 Prompt (Codex): “os codigos vc altera e os comandos no terminal vc cola aqui pra eu copiar e execuatr ok? so me deixe a par doq vc esta fazendo noc codigos”
 
-Resultado provisório: base Django, teste de integração e cobertura aceitos após execução local; o teste passou com `--shuffle` e registrou 100%. Os comandos do pre-commit precisam usar `python -m pre_commit` porque a política do Windows bloqueou o executável de console. A validação dos hooks continua pendente.
+Resultado: aceito com ajustes após execução local. A base Django, o teste de integração e a cobertura passaram; o primeiro teste com `--shuffle` registrou 100%. No Windows, os comandos do pre-commit passaram a ser executados por `python -m pre_commit` porque a política bloqueou o atalho de console.
+
+## 2026-11-17 — Mariana — modelos e regras de recusa
+
+Prompt (Codex): “vamos fzr minha parte que falta. mariana , faça no codigo sem comentarios e me de os comandos pra fazer no terminal”
+
+Resultado: aceito com ajustes. Foram implementados `Chamado`, `HistoricoChamado`, as recusas de comentário, avaliação e conclusão, e testes para os caminhos recusados e aceitos. Mariana gerou e aplicou a migration; 13 testes passaram com `--shuffle`, a cobertura ficou em 100% e os hooks executados passaram.
