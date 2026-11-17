@@ -1,0 +1,47 @@
+default_install_hook_types: [pre-commit, commit-msg]
+
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.5
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pypa/pip-audit
+    rev: v2.10.1
+    hooks:
+      - id: pip-audit
+        args: ["."]
+
+  - repo: https://github.com/compilerla/conventional-pre-commit
+    rev: v4.5.0
+    hooks:
+      - id: conventional-pre-commit
+        stages: [commit-msg]
+
+  - repo: local
+    hooks:
+      - id: django-check
+        name: django system check
+        entry: uv run python manage.py check
+        language: system
+        pass_filenames: false
+
+      - id: django-migrations
+        name: check for missing migrations
+        entry: uv run python manage.py makemigrations --check
+        language: system
+        pass_filenames: false
+
+      - id: django-tests
+        name: run django tests with coverage
+        entry: uv run python -m coverage run manage.py test --shuffle
+        language: system
+        pass_filenames: false
+
+      - id: coverage-report
+        name: enforce coverage threshold
+        entry: uv run python -m coverage report
+        language: system
+        pass_filenames: false

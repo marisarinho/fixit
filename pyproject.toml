@@ -1,0 +1,52 @@
+[project]
+name = "fixit"
+version = "0.1.0"
+description = "Sistema web para registrar e acompanhar chamados de manutenção interna."
+readme = "README.md"
+authors = [
+    { name = "Mariana dos Santos Sarinho", email = "sarinho.mariana@academico.ifpb.edu.br" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "django>=5.2",
+]
+
+[project.scripts]
+fixit = "fixit:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "coverage>=7.17.3",
+    "pip-audit>=2.10.1",
+    "pre-commit>=4.7.0",
+    "ruff>=0.17.5",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.coverage.run]
+branch = true
+source = ["chamados"]
+omit = [
+    "*/migrations/*",
+    "*/tests/*",
+    "*/tests.py",
+    "manage.py",
+    "*/settings.py",
+    "*/wsgi.py",
+    "*/asgi.py",
+    "*/.venv/*",
+]
+
+[tool.coverage.report]
+fail_under = 95
+show_missing = true
